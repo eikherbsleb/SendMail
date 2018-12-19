@@ -56,12 +56,11 @@ def SendMail(From, To, Subject, Message ):
     import smtplib
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login("LACmus01@gmail.com", "LACmusPassword")
+    server.login("From@mail.adrs", "FromMailAdrsPassword")
     msg = "This is a test message from a Python app LACmusTaskStorageCheck"
-    server.sendmail("LACmus01@gmail.com", "eik.herbsleb@vattenfall.com", msg)
+    server.sendmail("From@mail.adrs", "to@mail.adrs", msg)
     server.quit()
     
-
 def ReadDeskProp(path):
     """
     Return free disk storage (GB in float) of the given path.
